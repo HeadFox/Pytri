@@ -1,0 +1,105 @@
+@font-face {
+	font-family: 'caviar';
+	src:url('../../fonts/caviar_dreams/caviardreams.ttf');
+}
+@font-face {
+	font-family: 'prometheus';
+	src:url('../../fonts/prometheus/PROMETHEUS.ttf');
+}
+@font-face { 
+    font-family: 'reckoning';
+	src:url('../../fonts/Reckoning.ttf');
+}
+footer{
+	text-align: center;
+	margin-bottom: 0;
+	font-family: reckoning;
+	color: rgb(96,149,85);
+	font-size: 20px;
+	position: absolute; 
+	bottom: 0;
+	left: 0; 
+	right: 0
+}
+
+
+
+html {
+	background: #202120;
+	text-align: center;
+
+}
+
+.container > header{
+	margin: 10px;
+	padding: 20px 10px 10px 10px;
+	position: relative;
+	display: block;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+
+}
+.container > header h1{
+	font-size: 100px;
+	line-height: 32px;
+	margin: 0;
+	margin-top: 25px;
+	margin-bottom: 100px;
+	position: relative;
+	font-weight: 300;
+	font-family: reckoning;
+	color: #F8FBEF;
+	text-shadow: 3px 3px 3px rgba(96,149,85,0.7);
+}
+
+.page {
+	background-color:rgba(255,255,255,0.9);
+	margin:100px;
+	border: 2px solid blue;
+	border-color: rgb(96,149,85)
+}
+article {
+	background-color:rgba(96,149,85,1.0);
+	margin: 5px;
+	border: 1px solid gray;
+	box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.5); 
+}
+article > p {
+	font-family:caviar;
+	text-align:justify;
+	margin-left:5px;
+	margin-right:5px;
+}
+button.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 11px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#5f9455 0%,
+		#308a45);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#5f9455),
+		to(#308a45));
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	border: 1px solid #ffffff;
+	-moz-box-shadow:
+		0px 3px 11px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(000,000,000,1);
+	-webkit-box-shadow:
+		0px 3px 11px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(000,000,000,1);
+	box-shadow:
+		0px 3px 11px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(000,000,000,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,0.3);
+	cursor:pointer;
+}
+
+button.css3button:hover {background:rgba(135,215,119,0.8);}
+button.css3button:active{position:relative;top:1px;}

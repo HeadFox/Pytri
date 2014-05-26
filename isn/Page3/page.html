@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Projet ISN</title>
+		<link rel="shortcut icon" href="images/logo-site.png">
+        <meta name="description" content="" />
+        <meta name="keywords" content="circle, border-radius, hover, css3, transition, image, thumbnail, effect, 3d" />
+        <meta name="author" content="" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+		<!--[if lte IE 8]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+   </head>
+    <div class="container">
+    <header>
+    	<h1>Explications</h1>
+		<h2> Site Web </h2>
+    </header>
+    <body>
+    <div class='page'>
+    	<article>
+			<h3>Mise en Place</h3>		
+    		<p><b>Tout au long de l'année, nous avons peaufiné nos connaissances par le biais d'apprentissage de plusieurs languages, comme le Pyhton, l'HMTL, le CSS ou le PHP.<br>
+			   Nous devions donc faire un projet mêlant ces acquis que notre courageux professeur nous avait appris.<br>
+			   C'est pour cela que notre programme est entièrement fait en Python, et que notre site comporte les languages cités précédemment.<br>
+			   Les grandes raisons du choix de Python sont aussi: La stabilité du code, La facilité (Permettant d'éviter des erreurs fréquente) et aussi au fait que python n'a pas besoin de compilation et peut être utiliser sur quasiment tout les OS.
+			   Nous avons longtemps hésité sur le design du site, nous voulions quelque chose de présentable et visuellement plaisant à regarder. <br>
+			   <br>
+			   Le design vient donc du site Codrops, qui est un site en libre accès, même pour les sites professionels. Nous avons ensuite modifié son code pour le modifier selon nos goûts. <br>
+			   Toutes nos Images ont été choisi avec soin et de préférence avec un fond transparent pour qu'elles soient mieux intégrer sur la page. Le site présente donc un accueil menant à d'autres pages.<br>
+		       Nous avons utiliser Notepad++ pour gérer le codage ainsi que APTANA STUDIO, un programme permettant de visualiser directement le code crée, ce qui a facilité nos corrections et la rapidité à modifier le design.</b><br>
+			</p>
+    	</article>
+    	<hr style="width:400px">
+    	<article>
+			<h3>Détails de la construction de l'accueil</h3>
+    		<h4>Pour cette partie, nous expliquerons comment fonctionne la page d'accueil, à l'aide des lignes de code que nous avons intégré.</h4>
+    		<article>
+    		<p><b>Nous avons donc 4 bulles servant à dirigier l'utilisateur vers différentes pages.<br>
+    			 Nous avons divisé les onglets en plusieurs catégories: le préambule, l'explication du programme, du site et les liens des logiciels qui nous ont permis de monter le site et le programme.<br>
+			      <br>
+			     Chaque fois que l'utilisateur passe son curseur sur la bulle, une petite animation aura lieu pour laisser place à une autre bulle qui va donner des brèves informations sur le lien qui en découle.<br>
+				  L'animation s'articule de la manière suivante :<br>
+				  <br>
+				  <img src="images/code-un.png" alt="Explications Bubulle"><br>
+				  Nous pouvons voir plusieurs </b>class<b>, chaque </b>class<b> que nous avons attribué a une fonction bien précise dans le css, grâce à ça, chaque class va affecter son style css a tout ce qui est entre ses balises.<br>
+				  Chaque balise pourrait intégrer une </b>class<b> comme &lt;div class=""&gt; (qui est un conteneur pouvant appeler une class css) Les fichiers css ont été appeler au début dans &lt;head&gt;<br>
+				  <br>
+				  Prenons l'exemple des lignes suivantes :<br>
+				  <br>
+				  <img src="images/ch-info.png" alt="Explications ligne"><br>
+				  Grâce à </b>ch-info<b>, la bulle sera placée en fonction des paramètres que nous avons rentré ! (la hauteur avec height et la largeur avec </b>width<b>)<br>
+				  Ce ch-info nous servira donc à definir la place de notre bulle sur notre page ! (le radius sert à obtenir une forme ronde !)</b></p>
+					
+				  <hr class="separation">
+				  <p><b>À partir d'ici, tout ce qui sera à l'intérieur de notre class </b>ch-info<b>, servira à définir ce qui est propre à la bulle. (On peut voir ça comme un système de poupées russes !)<br>
+				  Il y a donc de nombreuses "class" qui nous ont servi à définir les paramètres des bulles, en voici quelques autres :<br>
+				  <br>
+				  <img src="images/ch-wrap.png" alt="Explications ligne2"><br>
+				  <img src="images/ch-infodiv.png" alt="Explications ligne3"><br>
+				  Le </b>ch-info-warp <b> s'occupera du fond de la bulle, celui-ci aura l'image que nous lui avons attribué ainsi que </b>box-shadow<b> pour créer des ombrages différents.<br>
+				  L'autre </b>ch-info<b> va fixer la bulle, à l'aide de </b>"display"<b> qui va spécifier un bloc, puis de "position" qui va déterminer le mode de positionnement de la bulle.<br>
+				  Le </b>background-position<b> indique la position initiale d'une image d'arrière-plan et le </b>webkit-backface-visibility<b> détermine si la face arrière d'un élément doit être visible ou non lorsqu'elle fait face à l'utilisateur.<br><br>
+				  <img src="images/bulleun.png" alt="bulleun"></b></p>
+				  <p class="center">Une jolie bulle a été créée, celle-ci remplie toutes les caractéristiques que nous lui avons attribué !</p>
+				  <hr class="separation">
+				  <p><b>Chaque class possède une fonction bien spéficique qui détermine une caractéristique de la bulle, c'est grâce à ce système que nous voyons une petite animation !<br>
+				  Il y a 4 bulles, nous avons donc répété ces lignes 4 fois comme cela :<br>
+				  <br>
+				  <img src="images/code-deux.png" alt="Explications répétition"><br>
+				  À la manière de la bulle précédente, nous avons juste changé l'image </b>ch-img-3<b> ainsi que les couleurs de fond des bulles lorsque l'utilisateur place son curseur dessus </b>ch-info-back-3<b>.<br>
+				  <br>	
+				  <img src="images/bulletrois.png" alt="bulle trois"></b></p><br>
+				  <p class="center">Nous avons de plus conservé la balise &lt;h3&gt; car nous n'avions pas besoin de modifier les titres de ce genre.</p>
+				  <hr class="separation">
+				  <p><b>La petite ligne suivante nous a été bien utile, celle-ci sert à ammener l'utilisateur vers la page désirée :<br>
+				  <br>
+				  <img src="images/lien.png" alt="Explications lien"><br>
+				  Avec cette balise, nous avons juste à modifier le chemin désiré pour que la page en question s'ouvre, voici le résultat de cette ligne :<br>
+				  <br>
+				  <img src="images/letsgo.png" alt="Consequence"><br>
+				  Le "Let's go" devient blanc, cela signifie que nous sommes bien prêt à changer de page si nous cliquons sur ce dernier.</b></p>
+				  <hr class="separation">
+				  <p><b>Pour finir sur la page d'accueil, nous avons rajouté un "copyright" que nous avons insérer dans une balise &lt;p&gt; inclus dans la balise &lt;footer&gt; (destiné au pied de page).<br>
+				  <br>
+				  <img src="images/copirayte.png" alt="Copyright"><br>
+				  Le texte prend donc les paramètres que nous avons rentré dans la balise </b>footer > p<b> et nous avons fait en sorte qu'il reste en bas de page avec une police et une couleur différente du reste:<br>
+				  <br>
+				  <img src="images/resultat.png" alt="Copyright résultat"><br></p></b>
+			</article>
+		</article>
+		<br>
+		<br>
+		<article>
+			    <h3>Détails de la construction d'une page</h3>
+		    <h4>Pour cette partie, nous analyserons une page d'explications, avec des lignes de code, comme pour l'exemple précédent.</h4>
+			<article>
+			<p><b> Sur une page d'explication, nous trouvons deux grands titres principaux en haut de la page, voici comment s'articule le début de notre page :<br>
+			<br>
+			       <img src="images/ligne-expli.png" alt="début du code"><br>
+				   Ce début est très simple, nous avons tout d'abord crée une nouvelle class nommée </b>container"<b>, celle-ci prend différent paramètres que nous pouvons voir si-dessous, en voici un exemple :<br>
+				   <br>
+				   <img src="images/h.png" alt="h1header"><br>
+				   Ici, nous avons attribué plusieurs fonctions à ce qui se trouve dans la balise &lt;h1&gt;, nous l'avons placé précisement par rapport à la page </b>margin<b>.<br>
+				   Nous lui avons donner des couleurs précises </b>color, text-shadow)<b> et une taille désirée </b>font-size<b>.</b></p>
+				   <img src="images/expli.png" alt="Expli">
+				   <p class="center">Un joli titre en tête de page a été crée !</p>
+				   <hr class="separation">
+				   <p><b>Nous avons fait de même pour &lt;h2&gt;, nous avons réglé les paramètres pour que le titre soit important mais moins que le &lt;h1&gt;.<br>
+				   Après avoir le haut de notre page, nous avons commencé à nous attaquer au squelette de la page, c'est à dire le &ltbody&gt;, à partir d'ici, nous avons ouvert une nouvelle </b>class<b> que nous avons nommé </b>page<b>,<br>
+				   voici ses caractéristiques :<br>
+				   <br>
+				   <img src="images/page.png" alt="page"><br>
+				   Cette class est le résultat du grand carré blanc que nous voyons en fond, l'intêret de ce carré est de pouvoir garder le même fond pour toutes les pages et faire une délimitation avec celui-ci pour ajouter les couleurs que nous voulons au-dessus. <br>
+				   Celui-ci sert donc à garder une certaine harmonisation entre les pages ainsi qu'un design plus propre et délimité.<br>
+				   Nous avons donc rajouter une bordure grise pour garder un petit effet d'ombre, ajoutons à ça une très petite largeur de ce carré pour ne pas gêner le texte à côté.</b></p>
+				   <hr class="separation">
+				   <p><b>Maintenant, nous avons attribué des caractéristiques à &lt;p&gt;  ce qui nous permettra de garder les mêmes caractéristiques de police à chaque fois :<br>
+				   <br>
+				   <img src="images/police.png" alt="police"><br></b></p>
+				   <p class="center">Nous pouvons voir que la police a été défini et restera toujours la même. Il en est de même pour la taille.</p>
+				   <hr class="separation"><br>
+				   <p><b>Le coeur du design de nos pages repose sur la balise &lt;article&gt; que nous avons crée. Celle-ci sert à faire des délimitations à la manière de la </b>class<b> que nous avons expliquer plus haut,<br>
+				   mais cette fois, avec une ombre intégrée !<br>
+				   <br>
+				   <img src="images/article.png" alt="article"><br>
+				   <br>
+				   Ici, nous avons rajouté quelques propriétés à cette balise en ajoutant une couleur grise, et une ombre que nous avons modifié.<br>
+				   Pour donner l'importance à une partie, nous avons superposé plusieurs balises &lt;article&gt; pour donner un aspect délimité.</b></p>
+				   <hr class="separation">
+				   <p><b>Nous avons rajouté une petite barre pour délimiter l'introduction et l'explication, voici son code :<br>
+				   <br>
+				   <img src="images/petiteligne.png" alt="petite ligne"><br>
+				   <br>
+				   Et voici le résultat de notre petite barre dont nous avons modifié la taille à </b>400px<b> pour qu'elle ne soit pas trop grande :<br>
+				   <br>
+				   <img src="images/barre.png" alt="barre"></b></p>
+				   <hr class="separation">
+				   <p><b>Pour finir, nous avons rajouté un côté utilitaire à cette page en intégrant un bouton permettant de revenir à la page d'accueil. Pour cela, nous avons utilisé les commandes suivantes :<br>
+				   <br>
+				   <img src="images/bouton.png" alt="bouton"><br>
+				   <br>
+				   Dans un premier temps, nous indiquons là où nous souhaitons que l'utilisateur arrive lorsqu'il clique sur le bouton. Ici, la destination correspond à l'index.<br>
+				   <br>
+				   Nous ouvrons ensuite une class pour rentrer tous les paramètres que nous voulons pour notre bouton, en voici une petite partie :<br>
+				   <br>
+				   <img src="images/boutoncss.png" alt="boutoncss"><br>
+				   <br>
+				   Il y a plusieurs lignes pour ce petit bouton, mais nous pouvons retenir les principales qui sont la police, la taille, ainsi que le petit dégradé de couleur. <br>
+				   Il y a aussi les changements lorsque l'utilisateur passe la souris sur le bouton (La couleur va changer ici) désigner par </b>hover<b> et </b>active<b> désigne l'action lorsque l'utilisateur clique sur le bouton (déplacement de 1px vers le haut).<br><br>
+				   </p></b>
+				   <img src="images/capture.png" alt="boutoncss"><br>
+				   <br>
+		    </article>
+		</article>
+		<br>
+			<article>
+			<p class="img"><b>Voici donc comment s'articule notre site. <br>
+			<br>
+			Grâce à tout cela nous obtenons un design unique, simple et plaisant à lire. Tel était le but de départ.<br>
+			<br>
+			<u>NB:</u> Le code JavaScript est une partie du code CSS pour les annimation est tirée de Codrops<br>
+			   (La partie du code tirée de ce site est évidemment ouverte aux projets personnels et commerciaux et n'est soumis à aucun copyright)<br>	  
+			</b></p>
+    	</article>
+    </div>
+	</div>
+	<a href="../index.html" style=""><button type="button" name="" value="" class="css3button">Accueil</button></a>	
+    </body>

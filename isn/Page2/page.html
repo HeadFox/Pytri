@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Projet ISN</title>
+		<link rel="shortcut icon" href="images/logo-site.png">
+        <meta name="description" content="" />
+        <meta name="keywords" content="circle, border-radius, hover, css3, transition, image, thumbnail, effect, 3d" />
+        <meta name="author" content="" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+		<!--[if lte IE 8]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+   </head>
+    <div class="container">
+    <header>
+    	<h1>Explications</h1>
+		<h2>Programme Python</h2>
+    </header>
+    <body>
+	<div class='page'>
+    	<article>
+			<h3>Mise en Place</h3>
+    		<p><b>Il est important de préciser qu'il y avait un projet avant celui-ci, étant trop dur à réaliser a cause de son code source non mis-à-jour, nous avons du abandonné l'idée. <br>
+			   Celui-ci consistait à gérer des actions d'un téléphone via des commandes Python, malgré l'acquisition des modules, ce projet était trop dur à réaliser.<br>
+			   Le nouveau projet nous est donc venu du fait que Lucien avait un problème pour ranger ses dossiers qui trainaient partout sur son ordinateur, sans jamais être rangé. <br>
+			   De cette idée, nous avons voulu tenté de ressoudre ce problème via Python, cela a donc servi de base à notre projet.<br>
+			   <br>
+			   Trois modules sont utilisés pour permettre au programme de fonctionner :<br>
+			   		- Shutil, servant à copier/coller/déplacer des dossiers<br>
+			   		– Glob, permettant de trouver des noms précis<br>
+			   		– Os, permettant de manipuler des chemins<br>
+			   <br>
+			   Ces modules nous servent donc à pouvoir naviguer librement pour effectuer le trie désiré.<br>
+			   Il est important de savoir que le programme peut trier les disques durs, mais aussi les clés USB.<br>
+			   Grâce à ce programme, il est possible de créer autant de dossier possible avec un même nom, sinon un nouveau dossier sera automatiquement crée avec un numéro supplémentaire pour le différencier.</b><br>
+			</p>
+    	</article>
+    	<hr style="width:400px">
+    	<article>
+			<h3>Détails de la construction du Programme</h3>
+    		<p><b>Il faut savoir que la mise en place d'une structure dans ce programme a été la chose la plus difficile au finale.<br>
+			En effet les modules utilisés contiennent de nombreuses commande à peu près similaires les unes par rapport au autres. <br>
+			Pour résumer ce long programme, nous avons donc decidé de le séparer en 3 étapes : <br>
+			- Etape 1 : Initialisation <br>
+			- Etape 2 : Traitement des informations <br>
+			- Etape 3 : Tri des fichiers en fonction de l'option choisie <br>
+			---> Nous allons allons donc expliquer ce programme étape par étape.
+			</b></p>
+    	</article>
+		<article>
+		<p><b> La première étape consiste donc tout simplement a initialiser quelques éléments comme par exemple la variable "p" qui va nous servir pour le nom des dossiers <br>
+               dans lesquels vont aller nos fichiers ou encore les chemin d'accès de nos dossier de provenance des fichiers ( la où se trouve tout notre vrac de fichiers ) <br>
+               Le principe du programme est donc simple :
+               - On selectionne un dossier dans lequel se trouve notre vrac <br>
+               - On selectionne ensuite un dossiers où vont apparaitre nos fichiers triés <br>
+               - l'utilisateur a ensuite 3 options de tri qui sont donc :
+		  <ul>
+		   <li> Tri par format</li> 
+		   <li> Tri par extension seulement ( option la plus selective)</li> 
+		   <li> Tri par type de fichier ( donc un tri par extension dans un tri selectif )</li>																		  
+		  </ul></b></p>
+		  <p class="center"><b>Voici donc à quoi ressemble (sur python) l'initialisation du programme :</b></p>
+			<img src="../images/START.png"><br>
+		<p><b> Suite à ça on introduit une fonction nommée Pytri qui va prendre en argument :</b> p, path et path2 <b>( p = variable qui servira de compteur pour le nom de nos futurs dossiers ),( path = chemin d'acces pour les fichiers en vrac )
+	           et( path2 = le chemin d'accès pour la destination des fichiers triés ) <br>
+			   la commande os.chdir issue du module 'OS' va dire a python que l'on va travailler dans le dossier renseigné( ici c'est path2 ). <br>
+			   puis on applique la commande python "global" à la variable "option1" qui va donc faire que la variable pourra être utilisée dans tout le programme ( on globalise la variable ). <br>
+			   On fait donc ensuite choisir à l'utilisateur par quelle option veut-il trier ses dossiers :  <br>
+			   </b></p>
+			   <img src="../images/capture1.png"><br>
+			   <p><b> Ici on peut donc voir la bifurcation entre différentes issues de tri. (Nous avons decidé de nommer chacune des options par les étapes 2.2, 2.3, 2.4 ) <br>
+			   <img src="../images/Capture2.png"><br>
+			   Nous allons expliquer l'étape 2.2 en detail. <br>
+			   Donc on presente à l'utilisateur qu'il a choisi l'option 1 ( histoire de mettre des pauses dans le programme ) puison commence la boucle while. <br>
+               Celle-ci dit : Tant que python a accès aux dossiers musiques, videos,etc <-- +str(p) ( str(p) car on a initialisé p à 0 donc si de tels dossiers existent il faut donc ajouter 1 à p pour ne pas se retrouver avec plusieurs fois le même dossier <br>
+               Ensuite il est dit que si les dossiers cités ci-dessus existent, on demande à l'utilisateur si il veut créer de nouveaux dossiers ( on lui dit de repondre par (O/N) ) puis on rentre sa reponse dans la variable folder. <br>
+               Si l'utilisateur veut créer de nouveaux fichiers, python va créer les dossiers cités +str(p), si il ne le veut pas, on crée tout simplement less dossiers sans numero. <br>
+			   Passons à l'étape 2.3 en detail. <br>
+			   </b></p><p class="center"><img src="../images/Capture3.png"> <br></p>
+			   <p><b>Ici, on demande à l'utilisateur avec quel format(s) veut-t-il trier ses dossiers. Puis selon la(les) reponse(s) de l'utilisateur, python rentre cela dans une liste pour ensuite créer des dossiers du type mp3. <br> 
+			   A ce niveau le tri n'a toujours pas eu lieu dans aucne des options, on prepare juste les conditions pour ensuite les appliquer au programme. <br>
+			   Passons ensuite à l'étape 2.4 <br>
+               </b></p><p class="center"><img src="../images/Capture4.png"></p>			   
+			   <p><b> On affiche toujours qu'elle option à choisi l'utilisateur, on globalise "option2" puis on demande ensuite a l'utilisateur par quel type il veut trier ses fichiers ( voir capture d'ecran ). <br>
+			   Puis en fonction de ce que l'utilisateur à choisi, on procède à la creation des dossiers. On execute ensuite la fonction pytrie <br>
+               On retrouve ensuite la commande os.chdir qui va faire travailler python dans le dossier des fichiers en vrac. <br>
+			   </b></p><p class="center"><img src="../images/Capture5.png"></p>
+ 			   <p><b> C'est à partir d'ici que le déplacement de fichiers est enclanché :
+			   </b></p><p class="center"><img src="../images/Capture6.png"></p><br>
+			   <p><b>On utilise la commande os.walk() qui permet de parcourir des dossiers recursivement, c'est à dire aller dans les sous-dossiers voir sous-sous-dossiers.<br>
+			   dans la boucle for, on parcourt l'élément files qui avait lui même parcouru os.walk(). <br>
+			   Ensuite, Si la fin de l'élément relevé se termine par l'extension contenu dans la liste correspondant au format du fichier,
+			   et ici le module shutil nous est utile pour On copie l'élément relevé (os.path.join est pour lier le fichier relever à son chemin). <br>
+			   Et le processus de tri est enclenché ! Voyons en détail comment se passe le tri pour chaque option. <br>
+			   OPTION 1 :<br>
+			   </b></p><p class="center"><img src="../images/Capture7.png"></p><br>
+			   <p><b> Si vous avez suivi tout du long, vous n'auriez aucun problème à comprendre cette partie là. Donc en resumé, chaque dossier (ip, mp, dp..) a sa liste d'extension dans un autre fichier python : <br>
+			   </b></p><p class="center"><img src="../images/Capture8.png"></p><br>
+			   <p><b> et donc python tri les fichiers par grâce aux extensions et les redistribuent dans leurs dossiers respectifs.<br>
+			   OPTION 2:<br>
+			   Pour l'option 2 le tri se fait grace, rappelez-vous à l'utilisateur qui choisi lui même ses extensions. Voyons comment se deroule le tri. <br>
+			   </b></p><p class="center"><img src="../images/Capture9.png"></p><br>
+			   <p><b>Ici la commande move() a le rôle de deplacement des fichiers. On commence d'abord par la boucle for, donc "g" va prendre toutes les valeurs presentes dans "extdossier" successivement puis on controle si<br>
+			   path2 + / + g n'existe pas déjà et si c'est le cas on créé le dossier de chemin path2+/+g. Ensuite on reutilise la commande move() pour deplacer les fichiers. <br>
+			   Voyons enfin le cas de l'OPTION 3:<br>
+			   </b></p><p class="center"><img src="../images/Capture10.png"></p><br>
+			   <p><b>Remarque : au debut de chaque tri on demande a l'utilisateur si il veut vraiment continuer par soucis de clareté dans notre programme.<br>
+			   Ici le principe est le  même que dans les autres option sauf qu'ici Python ne va pas créer 4 dossiers comme d'habitude, ici il n'en crée qu'un seul selon le choix de l'utilisateur <br>
+			   donc selon le choix de type de fichiers fait, Python va prendre les valeurs de la liste correspondante au type de fichier et à l'aide d'une boucle for, parcourir la liste pour trouver <br>
+			   le bon format.<br>
+			   A la fin, le programme affiche a l'utilisateur que le deplacement à été bien executé.
+		</b></p>
+		</article>
+		<article>
+		<p><b> Voir page suivante pour des explications sur la construction du site.</b></p>
+		</article>
+    </div>
+	<a href="../index.html" style=""><button type="button" name="" value="" class="css3button">Accueil</button></a>	
+    </body>
+</html>
