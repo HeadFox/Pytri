@@ -63,7 +63,8 @@
 		   <li> Tri par type de fichier ( donc un tri par extension dans un tri selectif )</li>																		  
 		  </ul></b></p>
 		  <p class="center"><b>Voici donc à quoi ressemble (sur python) l'initialisation du programme :</b></p>
-			<img src="../images/START.png"><br>
+			<img src="../images/START.png">
+			<hr class="separation">
 		<p><b> Suite à ça on introduit une fonction nommée Pytri qui va prendre en argument :</b> p, path et path2 <b>( p = variable qui servira de compteur pour le nom de nos futurs dossiers ),( path = chemin d'acces pour les fichiers en vrac )
 	           et( path2 = le chemin d'accès pour la destination des fichiers triés ) <br>
 			   la commande os.chdir issue du module 'OS' va dire a python que l'on va travailler dans le dossier renseigné( ici c'est path2 ). <br>
@@ -72,16 +73,19 @@
 			   </b></p>
 			   <img src="../images/capture1.png"><br>
 			   <p><b> Ici on peut donc voir la bifurcation entre différentes issues de tri. (Nous avons decidé de nommer chacune des options par les étapes 2.2, 2.3, 2.4 ) <br>
-			   <img src="../images/Capture2.png"><br>
+			   <img src="../images/Capture2.png">
+			<br>
 			   Nous allons expliquer l'étape 2.2 en detail. <br>
 			   Donc on presente à l'utilisateur qu'il a choisi l'option 1 ( histoire de mettre des pauses dans le programme ) puison commence la boucle while. <br>
                Celle-ci dit : Tant que python a accès aux dossiers musiques, videos,etc <-- +str(p) ( str(p) car on a initialisé p à 0 donc si de tels dossiers existent il faut donc ajouter 1 à p pour ne pas se retrouver avec plusieurs fois le même dossier <br>
                Ensuite il est dit que si les dossiers cités ci-dessus existent, on demande à l'utilisateur si il veut créer de nouveaux dossiers ( on lui dit de repondre par (O/N) ) puis on rentre sa reponse dans la variable folder. <br>
-               Si l'utilisateur veut créer de nouveaux fichiers, python va créer les dossiers cités +str(p), si il ne le veut pas, on crée tout simplement less dossiers sans numero. <br>
+               Si l'utilisateur veut créer de nouveaux fichiers, python va créer les dossiers cités +str(p), si il ne le veut pas, on crée tout simplement less dossiers sans numero.
+			<hr class="separation">
 			   Passons à l'étape 2.3 en detail. <br>
 			   </b></p><p class="center"><img src="../images/Capture3.png"> <br></p>
 			   <p><b>Ici, on demande à l'utilisateur avec quel format(s) veut-t-il trier ses dossiers. Puis selon la(les) reponse(s) de l'utilisateur, python rentre cela dans une liste pour ensuite créer des dossiers du type mp3. <br> 
-			   A ce niveau le tri n'a toujours pas eu lieu dans aucne des options, on prepare juste les conditions pour ensuite les appliquer au programme. <br>
+			   A ce niveau le tri n'a toujours pas eu lieu dans aucne des options, on prepare juste les conditions pour ensuite les appliquer au programme.
+			<hr class="separation">
 			   Passons ensuite à l'étape 2.4 <br>
                </b></p><p class="center"><img src="../images/Capture4.png"></p>			   
 			   <p><b> On affiche toujours qu'elle option à choisi l'utilisateur, on globalise "option2" puis on demande ensuite a l'utilisateur par quel type il veut trier ses fichiers ( voir capture d'ecran ). <br>
@@ -93,18 +97,22 @@
 			   <p><b>On utilise la commande os.walk() qui permet de parcourir des dossiers recursivement, c'est à dire aller dans les sous-dossiers voir sous-sous-dossiers.<br>
 			   dans la boucle for, on parcourt l'élément files qui avait lui même parcouru os.walk(). <br>
 			   Ensuite, Si la fin de l'élément relevé se termine par l'extension contenu dans la liste correspondant au format du fichier,
-			   et ici le module shutil nous est utile pour On copie l'élément relevé (os.path.join est pour lier le fichier relever à son chemin). <br>
+			   et ici le module shutil nous est utile pour On copie l'élément relevé (os.path.join est pour lier le fichier relever à son chemin).
+			<hr class="separation">
 			   Et le processus de tri est enclenché ! Voyons en détail comment se passe le tri pour chaque option. <br>
+			<br>
 			   OPTION 1 :<br>
 			   </b></p><p class="center"><img src="../images/Capture7.png"></p><br>
 			   <p><b> Si vous avez suivi tout du long, vous n'auriez aucun problème à comprendre cette partie là. Donc en resumé, chaque dossier (ip, mp, dp..) a sa liste d'extension dans un autre fichier python : <br>
 			   </b></p><p class="center"><img src="../images/Capture8.png"></p><br>
-			   <p><b> et donc python tri les fichiers par grâce aux extensions et les redistribuent dans leurs dossiers respectifs.<br>
+			   <p><b> et donc python tri les fichiers par grâce aux extensions et les redistribuent dans leurs dossiers respectifs.
+			<hr class="separation">
 			   OPTION 2:<br>
 			   Pour l'option 2 le tri se fait grace, rappelez-vous à l'utilisateur qui choisi lui même ses extensions. Voyons comment se deroule le tri. <br>
 			   </b></p><p class="center"><img src="../images/Capture9.png"></p><br>
 			   <p><b>Ici la commande move() a le rôle de deplacement des fichiers. On commence d'abord par la boucle for, donc "g" va prendre toutes les valeurs presentes dans "extdossier" successivement puis on controle si<br>
-			   path2 + / + g n'existe pas déjà et si c'est le cas on créé le dossier de chemin path2+/+g. Ensuite on reutilise la commande move() pour deplacer les fichiers. <br>
+			   path2 + / + g n'existe pas déjà et si c'est le cas on créé le dossier de chemin path2+/+g. Ensuite on reutilise la commande move() pour deplacer les fichiers.
+			<hr class="separation">
 			   Voyons enfin le cas de l'OPTION 3:<br>
 			   </b></p><p class="center"><img src="../images/Capture10.png"></p><br>
 			   <p><b>Remarque : au debut de chaque tri on demande a l'utilisateur si il veut vraiment continuer par soucis de clareté dans notre programme.<br>
@@ -115,7 +123,7 @@
 		</b></p>
 		</article>
 		<article>
-		<p><b> Voir page suivante pour des explications sur la construction du site.</b></p>
+		<p><b> Voir page suivante pour des explications sur la construction du site. <a href="../Page3/page.html">Let's Go!<a></b></p>
 		</article>
     </div>
 	<a href="../index.html" style=""><button type="button" name="" value="" class="css3button">Accueil</button></a>	
