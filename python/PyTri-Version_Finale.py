@@ -12,8 +12,8 @@ print("                 ## Vous êtes actuellement sous "+platform.system()+" "+
 
 ##### ETAPE 1 : INITIALISATION DES VARIABLES + DEFINITION DES CHEMINS #####
 
-path="C:/Projet/BAC/test"
-path2="C:/Projet/BAC/python"
+path="/Users/lucienpeslier/Desktop/test"
+path2="/Users/lucienpeslier/Desktop/python"
 os.chdir(path)   #Aller dans le path entré precedement
 print("")
 print("Dossier Actuel: "+os.getcwd())
@@ -33,25 +33,25 @@ def pytrie (p,path,path2):    #Je definie la fonction avec toute les variable qu
     [1] - Trier par normal type (Musiques, Documents, Images, Vidéos)
     [2] - Trier par le format de votre choix
     [3] - Trier par type avec choix (Musiques ou Documents ou Images ou Vidéos)
-    
-    Saisissez 1 ou 2 ou 3: """))
-   
 
-   
+    Saisissez 1 ou 2 ou 3: """))
+
+
+
 ##### ETAPE 2.2 : TRAITEMENT DES INFORMATIONS DEBUT DU TRI ######
 
     if option1=="1":     #En fontion de ce que l'utilisateur a tapé (J'ai mis les guillement vu que ce que rentre l'utilisateur c'est une chaine de caractère
         print("")
-        print("Vous avez choisi l'option de tri 1")     
+        print("Vous avez choisi l'option de tri 1")
         while os.access("Musiques"+str(p) or "Documents"+str(p) or "Images"+str(p) or "Videos"+str(p), os.F_OK):
             p=p+1
 
         if os.access("Musiques"+str(p) or "Documents"+str(p) or "Images"+str(p) or "Videos"+str(p), os.F_OK) or os.access("Musiques" or "Documents" or "Images" or "Videos", os.F_OK):
-            folder=str(input("D'anciens dossiers ont été detectés, en créer de nouveaux ? (O/N) :"))
+            folder=str(raw_input("D'anciens dossiers ont été detectés, en créer de nouveaux ? (O/N) :"))
 
             if folder == "o" or folder == "O":
                 global mp,vp,ip,dp
-                os.mkdir("Musiques"+str(p)) 
+                os.mkdir("Musiques"+str(p))
                 os.mkdir("Images"+str(p))
                 os.mkdir("Videos"+str(p))
                 os.mkdir("Documents"+str(p))
@@ -65,14 +65,14 @@ def pytrie (p,path,path2):    #Je definie la fonction avec toute les variable qu
                 ip="/Images"+str(p1)
                 vp="/Videos"+str(p1)
                 dp="/Documents"+str(p1)
-                
+
         else:
-            os.mkdir("Musiques") 
+            os.mkdir("Musiques")
             os.mkdir("Images")
             os.mkdir("Videos")
             os.mkdir("Documents")
-        
-##### ETAPE 2.3 : TRAITEMENT DES INFORMATIONS DEBUT DU TRI ######            
+
+##### ETAPE 2.3 : TRAITEMENT DES INFORMATIONS DEBUT DU TRI ######
 
     elif option1=="2":
         print("Vous avez choisi l'option de tri 2")
@@ -102,8 +102,8 @@ def pytrie (p,path,path2):    #Je definie la fonction avec toute les variable qu
             """))
 
             if option2=="1":
-                if not os.access("Documents" ,os.F_OK):          
-                    os.mkdir("Documents")    
+                if not os.access("Documents" ,os.F_OK):
+                    os.mkdir("Documents")
 
             elif option2=="2":
                 if not os.access("Musiques" ,os.F_OK):
@@ -123,16 +123,16 @@ def pytrie (p,path,path2):    #Je definie la fonction avec toute les variable qu
         Merci de saisir une valeur correcte
 
         """)
-        suppr() 
-                    
-    else:   
+        suppr()
+
+    else:
         print("""
 
         Merci de saisir une valeur correcte
 
         """)
         pytrie(p,path,path2)    #Si l'utilisateur à taper autre chose que 1,2 ou 3 > 2 il va afficher qu'il y a une erreur et il relance la fonction
-       
+
 pytrie(p,path,path2) #On execute la fonction
 
 
@@ -141,7 +141,7 @@ os.chdir(path)
 
 ##### ETAPE 3 : TRIAGE DES FICHIERS (MODULE GLOB)
 
-#Fonction pour deplacer "zerop" va etre remplacer par le deuxième terme mis dans la fonction. Par exemple pour musique on a move(ext,mp) >zerop va etre remplacer par mp          
+#Fonction pour deplacer "zerop" va etre remplacer par le deuxième terme mis dans la fonction. Par exemple pour musique on a move(ext,mp) >zerop va etre remplacer par mp
 
 def move(ext,zerop):
     for dirpath, dirnames, files in os.walk(path):   #On parcours avec plusieurs éléments l'arborescence des fichiers donné par os.walk
@@ -152,10 +152,10 @@ def move(ext,zerop):
 
 
 #### TRI POUR L'OPTION 1 (tri global) ####
- 
+
 if option1=="1":
-    confirm=str(input("Vos fichier vont être déplacés. Voulez-vous continuer ?(O/N) :"))
-    
+    confirm=str(raw_input("Vos fichier vont être déplacés. Voulez-vous continuer ?(O/N) :"))
+
     if confirm=="O" or confirm=="o":
 
         for ext in mpliste:  #On va parcourir les formats mis dans la liste que est dans le fichier extliste.py
@@ -169,29 +169,29 @@ if option1=="1":
 
         for ext in dpliste:
             move(ext,dp)
-            
+
         print("""
         ** Le déplacement des fichiers a été realisés avec succés.
            Merci de votre confiance.** """)
-        
+
 
     else:
         print("Annulation en cours...")
         print("Fin du programme, Veuillez quitter l'IDLE.")
         exit
-    
+
 
 #### TRI POUR L'OPTION 2 (tri par extension) ####
-        
+
 elif option1=="2":
-    confirm=str(input("Vos fichier vont être déplacés. Voulez-vous continuer ? (O/N): "))
+    confirm=str(raw_input("Vos fichier vont être déplacés. Voulez-vous continuer ? (O/N): "))
 
     if confirm=="O" or confirm=="o":
 
         for g in extdossier:  #extdossier c'est la variable qu'on a crée précédemment pour avoir la liste mais sans mes *. devant les éléments
 
             if not os.access(path2+"/"+g ,os.F_OK):# On crée les dossiers si il ne sont pas déjà présents
-                os.mkdir(path2+"/"+g)   
+                os.mkdir(path2+"/"+g)
             move(g,"/"+g)
 
             print("""
@@ -200,19 +200,19 @@ elif option1=="2":
     else:
         print("Annulation en cours...")
         print("Fin du programme, Veuillez quitter l'IDLE.")
-    
+
 #### TRI POUR L'OPTION 3 (tri par type de fichier) ####
-                        
+
 elif option1=="3":
-    confirm=str(input("Vos fichier vont être déplacés. Voulez-vous continuer ?(O/N): "))#Ya rien de compliquer a comprendre si tu as compris le reste
+    confirm=str(raw_input("Vos fichier vont être déplacés. Voulez-vous continuer ?(O/N): "))#Ya rien de compliquer a comprendre si tu as compris le reste
 
     if confirm=="O" or confirm=="o":
 
         if option2=="1":
             for ext in dpliste:
                 move(ext,dp)
-                
-        elif option2=="2": 
+
+        elif option2=="2":
             for ext in mpliste:
                 move(ext,mp)
 
@@ -228,9 +228,7 @@ elif option1=="3":
         ** Le déplacement des fichiers a été realisés avec succés.
            Merci de votre confiance.** """)
 
-    
+
     else:
         print("Annulation en cours...")
         print("Fin du programme, Veuillez quitter l'IDLE.")
-        
-    
